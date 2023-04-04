@@ -1,0 +1,26 @@
+version: '3'
+services:
+  obstack-db:
+    container_name: obstack-db
+    image: postgres:12-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: 'obstack'
+      POSTGRES_USER: 'obstack'
+      POSTGRES_PASSWORD: 'obstack'
+    volumes:
+      - obstack-db:/var/lib/postgresql/data
+  obstack:
+    container_name: obstack
+    image: obstack/obstack
+    depends_on:
+      - obstack-db
+    ports:
+      - '80:80'
+    environment:
+      DB_CONNECTIONSTRING: 'pgsql:host=obstack-db;dbname=obstack;user=obstack;password=obstack'
+    links:
+      - obstack-db
+volumes:
+  obstack-db:
+    driver: local
