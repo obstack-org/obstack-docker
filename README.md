@@ -2,7 +2,7 @@
 
 An obstack docker container with docker-compose setup.
 
-Example:
+Setup example:
 ```
 git clone https://github.com/obstack-org/obstack-docker.git
 cd obstack-docker
