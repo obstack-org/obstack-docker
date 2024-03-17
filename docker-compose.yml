@@ -13,12 +13,15 @@ services:
   obstack:
     container_name: obstack
     image: obstack/obstack
+    restart: always
     depends_on:
       - obstack-db
     ports:
       - '80:80'
+      - '443:443'
     environment:
       DB_CONNECTIONSTRING: 'pgsql:host=obstack-db;dbname=obstack;user=obstack;password=obstack'
+      SC_ENCRYPTIONKEY: ''
     links:
       - obstack-db
 volumes:
