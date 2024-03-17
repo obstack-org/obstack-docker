@@ -44,10 +44,10 @@ When starting the container it generates a self signed certificate if no certifi
     environment:
       SSL_CERTIFICATEFILE: |-
         -----BEGIN CERTIFICATE-----
-		[certificate]
+        [certificate]
         -----END CERTIFICATE-----
       SSL_CERTIFICATEKEYFILE: |-
         -----BEGIN PRIVATE KEY-----
-		[keyfile]
+        [keyfile]
         -----END PRIVATE KEY-----
 ```
