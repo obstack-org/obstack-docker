@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "Starting ObStack v1.2.0\n"
+echo -e "Starting ObStack v1.2.1\n"
 
 [[ ${#SSL_CERTIFICATEFILE} -ne 0 ]] && [[ ${#SSL_CERTIFICATEKEYFILE} -ne 0 ]] && {
   echo -e "$SSL_CERTIFICATEFILE" >/etc/ssl/apache2/server.pem
