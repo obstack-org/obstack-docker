@@ -12,7 +12,7 @@ cd obstack-docker
 docker-compose up -d
 
 # Import database schema:
-curl -s https://raw.githubusercontent.com/obstack-org/obstack/main/resources/obstack-schema-v1.sql | docker exec -i obstack-db psql -U obstack obstack
+curl -s https://raw.githubusercontent.com/obstack-org/obstack/main/resources/obstack-schema-pgsql-v1.2.0.sql | docker exec -i obstack-db psql -U obstack obstack
 ```
 
 Now login to your new installation on [http://yourserver/obstack](http://yourserver/obstack) with default authentication: _admin_/_admin_.
