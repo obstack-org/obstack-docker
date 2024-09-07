@@ -22,8 +22,12 @@ services:
     environment:
       DB_CONNECTIONSTRING: 'pgsql:host=obstack-db;dbname=obstack;user=obstack;password=obstack'
       SC_ENCRYPTIONKEY: ''
+    #volumes:
+    #  - obstack-plugins:/var/lib/obstack/webapp/plugins
     links:
       - obstack-db
 volumes:
   obstack-db:
     driver: local
+  #obstack-plugins:
+  #  driver: local
