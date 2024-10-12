@@ -25,6 +25,8 @@ Set in e.g. *docker-compose.yml*
 	* PDO DSN (Data Source Name: [https://www.php.net/manual/en/ref.pdo-pgsql.connection.php](https://www.php.net/manual/en/ref.pdo-pgsql.connection.php))
 * **SC_ENCRYPTIONKEY**
 	* Encryption key, used e.g. in encryption of recoverable passwords. Ensure you have read the documentation!: [http://www.obstack.org/docs/?doc=general-configuration#configuring-recoverable-passwords](http://www.obstack.org/docs/?doc=general-configuration#configuring-recoverable-passwords)
+* **PHP_UPLOADMAXFILESIZE**
+  * Set upload_max_filesize in php.ini
 
 ## SSL Certificate
 

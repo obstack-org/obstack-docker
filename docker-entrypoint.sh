@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "Starting ObStack v1.2.1\n"
+echo -e "Starting ObStack v1.2.2\n"
 
 [[ ${#SSL_CERTIFICATEFILE} -ne 0 ]] && [[ ${#SSL_CERTIFICATEKEYFILE} -ne 0 ]] && {
   echo -e "$SSL_CERTIFICATEFILE" >/etc/ssl/apache2/server.pem
@@ -23,5 +23,9 @@ mkdir -pm 750 /etc/obstack
 }
 echo -e "  http://www.obstack.org/docs/?doc=general-configuration#configuring-recoverable-passwords\n"
 chown -R root:apache /etc/obstack
+
+[[ ${#PHP_UPLOADMAXFILESIZE} -ne 0 ]] && {
+  sed -i "/^upload_max_filesize/c\upload_max_filesize = $PHP_UPLOADMAXFILESIZE" /etc/php*/php.ini
+}
 
 httpd -DFOREGROUND
