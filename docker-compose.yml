@@ -22,6 +22,7 @@ services:
     environment:
       DB_CONNECTIONSTRING: 'pgsql:host=obstack-db;dbname=obstack;user=obstack;password=obstack'
       SC_ENCRYPTIONKEY: ''
+    # PHP_UPLOADMAXFILESIZE: 2M
     #volumes:
     #  - obstack-plugins:/var/lib/obstack/webapp/plugins
     links:
